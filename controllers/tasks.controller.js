@@ -4,7 +4,9 @@ import Task from "../models/tasks.model.js";
 // get all
 export const getAllTask = async (req, res, next) => {
     try {
-        const allTask = await Task.find()
+        const { _id } = req.user
+
+        const allTask = await Task.find({ createdBy: _id })
 
         res.status(201).json({
             success: true,
@@ -67,7 +69,6 @@ export const deleteTask = async (req, res, next) => {
 
         if (!task) return next(new ErrorHandler("invalid task id for delete", 400))
 
-        // const deletedTask = await Task.deleteOne()
         const deletedTask = await Task.findByIdAndDelete(id)
 
         if (!deletedTask) return next(new ErrorHandler("server error, task not deleted", 400))
