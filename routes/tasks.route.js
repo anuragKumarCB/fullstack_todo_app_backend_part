@@ -11,7 +11,7 @@ router.get("/alltask", isAuthenticated, getAllTask)
 router.post("/newtask", isAuthenticated, createTask)
 
 // task status update route
-router.post("/taskstatus/:id", isAuthenticated, updateStatus)
+router.put("/taskstatus/:id", isAuthenticated, updateStatus)
 
 // task delete route
 router.delete("/delete/:id", isAuthenticated, deleteTask)

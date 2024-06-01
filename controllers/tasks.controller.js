@@ -9,7 +9,6 @@ export const getAllTask = async (req, res, next) => {
         res.status(201).json({
             success: true,
             message: "all task fetched successfully",
-            allTask
         })
     } catch (error) {
         return next(new ErrorHandler("get all task internal server error", 500))
@@ -30,7 +29,6 @@ export const createTask = async (req, res, next) => {
         res.status(201).json({
             success: true,
             message: "task created successfully",
-            createTask
         })
     } catch (error) {
         return next(new ErrorHandler("create task internal server error with errorhandeler", 500))
@@ -53,7 +51,6 @@ export const updateStatus = async (req, res, next) => {
         res.status(201).json({
             success: true,
             message: "task status updated successfully",
-            taskStatus
         })
     } catch (error) {
         return next(new ErrorHandler("task status update internal error", 500))
@@ -77,7 +74,6 @@ export const deleteTask = async (req, res, next) => {
         res.status(202).json({
             success: true,
             message: "task deleted successfully",
-            deletedTask
         })
     } catch (error) {
         return next(new ErrorHandler("delete task internal server error", 500))
