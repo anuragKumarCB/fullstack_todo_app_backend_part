@@ -9,6 +9,7 @@ export const getAllTask = async (req, res, next) => {
         res.status(201).json({
             success: true,
             message: "all task fetched successfully",
+            allTask
         })
     } catch (error) {
         return next(new ErrorHandler("get all task internal server error", 500))
